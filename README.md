@@ -1,4 +1,6 @@
-# ruby-calculator
+# Ruby Calculator
+
+## About
 An on-terminal calculator made using Ruby.
 Unlike other calculators I've made, this one has the ability to store
 variables with values, either an int or float. 
