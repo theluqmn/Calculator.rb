@@ -10,9 +10,10 @@ loop do
     puts "  - calc      | Calculator"
     puts "  - var       | Variable manager"
     puts "  - log       | View all answer logs"
+    puts ""
     puts "  - quit      | Quit program"
     puts "-"
-    action = gets.chomp
+    action = gets.chomp.downcase
 
     # Calculator function
     if action == "calc"
@@ -22,7 +23,7 @@ loop do
 
             puts "Enter the first input"
             puts "-"
-            n1 = gets.chomp
+            n1 = gets.chomp.downcase
 
             if n1.to_i.to_s == n1
                 puts "integer"
@@ -36,10 +37,12 @@ loop do
                 if n1 == "ans"
                     puts "Using default ans variable with #{ans} value"
                     n1 = ans
+                    sleep(2)
                     break
                 elsif vars.key?(n1)
                     puts "Using #{n1} variable, with #{vars[n1]} value"
                     n1 = vars[n1]
+                    sleep(2)
                     break
                 else
                     puts "Not a valid input - Only existing variables, ints, floats and ans are supported"
@@ -55,7 +58,7 @@ loop do
 
             puts "Enter the second input"
             puts "-"
-            n2 = gets.chomp
+            n2 = gets.chomp.downcase
 
             if n2.to_i.to_s == n2
                 puts "integer"
@@ -69,10 +72,12 @@ loop do
                 if n2 == "ans"
                     puts "Using default ans variable, with #{ans} value"
                     n2 = ans
+                    sleep(2)
                     break
                 elsif vars.key?(n2)
                     puts "Using #{n2} variable, with #{vars[n2]} value"
                     n2 = vars[n2]
+                    sleep(2)
                     break
                 else
                     puts "Not a valid input - Only existing variables, ints, floats and ans are supported"
@@ -91,7 +96,7 @@ loop do
         puts "  - div   | Division"
         puts "  - mul   | Multiplication"
         puts "-"
-        operation = gets.chomp
+        operation = gets.chomp.downcase
 
         # Math operations
         if operation == "add"
@@ -123,7 +128,7 @@ loop do
         # Enter variable name
         puts "Enter variable name"
         puts "-"
-        var_name = gets.chomp
+        var_name = gets.chomp.downcase
         var_data = 0
 
         # Enter variable data
@@ -132,7 +137,8 @@ loop do
 
             puts "Enter variable data"
             puts "-"
-            var_data = gets.chomp
+            var_data = gets.chomp.downcase
+            
             if var_data.to_i.to_s == var_data
                 puts "integer"
                 var_data = var_data.to_i
@@ -145,10 +151,12 @@ loop do
                 if var_data == "ans"
                     puts "Using default ans variable, with #{ans} value"
                     var_data = ans
+                    sleep(2)
                     break
                 elsif vars.key?(var_data)
                     puts "Using #{var_data} variable, with #{vars[var_data]} value"
                     var_data = vars[var_data]
+                    sleep(2)
                     break
                 else
                     puts "Not a valid input - Only existing variables, ints, floats and ans are supported"
@@ -162,7 +170,7 @@ loop do
 
             puts "Variable #{var_name} already defined, overwrite value? (y/n)"
             puts "-"
-            proceed = gets.chomp
+            proceed = gets.chomp.downcase
 
             if proceed == "y"
                 vars[var_name] = var_data
