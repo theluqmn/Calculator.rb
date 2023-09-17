@@ -201,6 +201,9 @@ loop do
         
     # Quit
     elsif action == "quit"
+        system("cls")
+
+        puts "Exiting..."
         break
     
     # 404
