@@ -153,7 +153,7 @@ loop do
         elsif operation == "mod"
             ans = n1 % n2
             clear()
-            puts "Result of #{n1} * #{n2} = #{ans}"
+            puts "Result of #{n1} % #{n2} = #{ans}"
 
         else
             puts "Unknown operation"
